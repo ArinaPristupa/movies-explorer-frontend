@@ -1,0 +1,42 @@
+.list_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+  margin-top: 60px;
+}
+
+.list__button {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  border: 0;
+  border: 1px solid #424242;
+  width: 320px;
+  height: 36px;
+  background: #202020;
+  border-radius: 5px;
+}
+
+.list__button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .list_container {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .list_container {
+    margin-top: 66px;
+  }
+
+  .list__button {
+    width: 240px;
+  }
+}
