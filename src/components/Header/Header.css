@@ -16,6 +16,10 @@
   opacity: 0.8;
 }
 
+.header__link {
+  margin-top: 2px;
+}
+
 .header__link-title {
   color: white;
   font-size: 12px;
@@ -117,6 +121,10 @@
 
   .header__logo {
     margin-top: 3px;
+  }
+
+  .header__link {
+    margin: 0;
   }
 
   .header__link-title {

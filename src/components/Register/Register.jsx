@@ -24,7 +24,7 @@ function Register() {
           name="email"
           id="user-email"
           placeholder="pochta@yandex.ru|"
-          className="form__text form__text-blue"
+          className="form__text"
           required
         />
         <span className='form__error'></span>
@@ -35,6 +35,7 @@ function Register() {
           name="password"
           id="password"
           className="form__text"
+          placeholder="••••••••••••••"
           required
         />
         <span className='form__error'></span>

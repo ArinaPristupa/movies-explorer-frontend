@@ -25,7 +25,7 @@ function MoviesCard() {
 
         <ul className='elements'>
             {
-                baseMovies.map((card) => (<li className="elements__list">
+                baseMovies.map((card) => (<li className="element">
                     <div className='element__info'>
                         <div className="element__mobile">
                             <h2 className="element__title">{card.title}</h2>

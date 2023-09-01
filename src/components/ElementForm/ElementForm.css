@@ -44,7 +44,7 @@
   margin-top: 5px;
 }
 
-.form__text-blue {
+.form__text:focus {
   border-bottom: 1px solid #4285f4;
 }
 

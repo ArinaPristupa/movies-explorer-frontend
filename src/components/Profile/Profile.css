@@ -39,10 +39,34 @@
   line-height: 13px;
   background: #202020;
   border: none;
+  color: #fff;
 }
 
 .profile__text::placeholder {
   color: #fff;
+}
+
+.profile__button {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  min-width: 100%;
+  height: 45px;
+  border-radius: 3px;
+  background: #4285f4;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: 1s;
+  cursor: pointer;
+  margin-top: 200px;
+  margin-bottom: 60px;
+}
+
+.profile__button:hover {
+  opacity: 0.7;
 }
 
 .profile__button-save {
@@ -92,6 +116,10 @@
     padding-top: 15px;
   }
 
+  .profile__button {
+    margin-bottom: 261px;
+  }
+
   .profile__button-save {
     margin-top: 195px;
   }
@@ -120,6 +148,11 @@
     width: 260px;
     padding-top: 17px;
     align-self: center;
+  }
+
+  .profile__button {
+    min-width: 260px;
+    margin: 340px auto 50px;
   }
 
   .profile__button-save {

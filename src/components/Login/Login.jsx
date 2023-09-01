@@ -23,6 +23,7 @@ function Login() {
           name="password"
           id="password"
           className="form__text"
+          placeholder="••••••••••••••"
           required
         />
         <span className='form__error'></span>

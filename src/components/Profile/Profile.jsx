@@ -3,6 +3,19 @@ import './Profile.css';
 import { Link } from 'react-router-dom';
 
 function Profile() {
+
+  const [isClicked, setIsClicked] = React.useState(false);
+
+
+  function handleClickEdit() {
+    setIsClicked(true);
+  }
+
+  function handleClickSave() {
+    setIsClicked(false);
+  }
+
+
   return (
     <main className="profile">
       <h2 className="profile__title">
@@ -31,11 +44,14 @@ function Profile() {
             required
           />
         </label>
-        <button className='profile__button-save'>Редактировать</button>
-        <Link to='/' className='profile__button-exit'>Выйти из аккаунта</Link>
+        {isClicked ? (<button className='profile__button' type='button' onClick={handleClickSave}>Сохранить</button>) :
+          (<>
+            <button className='profile__button-save' type='button' onClick={handleClickEdit}>Редактировать</button>
+            <Link to='/' className='profile__button-exit'>Выйти из аккаунта</Link>
+          </>)}
       </form>
     </main>
   )
 }
 
-export default Profile; 
+export default Profile;

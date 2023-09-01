@@ -10,8 +10,8 @@ function MoviesCardList() {
     return (
         <section className='list'>
             <MoviesCard />
-            <div className='list_container'>
-                {location.pathname === '/movies' && (<button aria-label="Добавить ещё фильмы" className="list__button" type="button">Ещё</button>)}
+            <div className='list-movies'>
+                {location.pathname === '/movies' && (<button aria-label="Добавить ещё фильмы" className="list-movies__button" type="button">Ещё</button>)}
             </div>
         </section>
     )
