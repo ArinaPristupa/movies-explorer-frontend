@@ -3,7 +3,7 @@ import './ElementForm.css';
 import { Link } from "react-router-dom";
 import logo from '../../images/logo.svg';
 
-function ElementForm({ title, children, buttonText, sign, linkRouter, link }) {
+function ElementForm({ title, children, buttonText, sign, linkRouter, link, isLoading, isDisabled, onSubmit }) {
     return (
         <div className="form">
             <Link to='/' className="form__logo" type='button'>
@@ -12,9 +12,10 @@ function ElementForm({ title, children, buttonText, sign, linkRouter, link }) {
             <h2 className="form__title">
                 {title}
             </h2>
-            <form className="form__form">
+            <form onSubmit={onSubmit} className="form__form" noValidate>
                 {children}
-                <button type="submit" className="form__button">{buttonText}</button>
+                <button type="submit" disabled={isDisabled ? true : false}
+                    className={isDisabled || isLoading ? "form__button form__button_active" : "form__button"}>{buttonText}</button>
             </form>
             <p className="form__sign">
                 {sign}

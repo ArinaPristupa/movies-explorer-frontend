@@ -1,43 +1,56 @@
-import { React, useState } from 'react';
-import { useLocation } from "react-router-dom";
+import React from 'react';
 import './MoviesCard.css';
-import baseMovies from '../../utils/baseMovies';
 
-function MoviesCard() {
+function MoviesCard({ movie, onMoviesLike, onMoviesDelete, saved, isSavedMovies, savedMovies }) {
 
-    const location = useLocation();
-
-    const [isCard, setIsCard] = useState();
-
-    const handleCardFavorites = () => {
-        setIsCard(!isCard);
-    }
-
-    const showsMovies = () => {
-        return (location.pathname === '/movies')
+    const durationFilm = (duration) => {
+        const hours = Math.floor(duration / 60);
+        const min = duration % 60;
+        return `${hours}ч${min}м`;
     };
 
-    const showsMoviesSaved = () => {
-        return (location.pathname === '/saved-movies')
+    const movieLikeButtonClassName = `${saved ? 'element__img-like element__img-like_active' : 'element__img-like element__img-like_noactive'}`;
+
+    function handleMoviesClick() {
+
+        if (saved) {
+            onMoviesDelete(savedMovies.filter((item) => item.movieId === movie.id)[0])
+        }
+        else {
+            onMoviesLike(movie)
+        }
+    };
+
+    function handleDeleteClick() {
+
+        onMoviesDelete(movie);
+
     };
 
     return (
 
-        <ul className='elements'>
-            {
-                baseMovies.map((card) => (<li className="element">
-                    <div className='element__info'>
-                        <div className="element__mobile">
-                            <h2 className="element__title">{card.title}</h2>
-                            <span className="element__duration">{card.duration}</span>
-                        </div>
-                        {showsMovies() && (<button onClick={handleCardFavorites} aria-label="Отметка мне нравится" className={`element__img-like element__img-like_${!isCard ? 'active' : 'noactive'}`} type="button"></button>)}
-                        {showsMoviesSaved() && (<button aria-label="Удалить фильм" className="element__trash" type="button"></button>)}</div>
-                    <img className="element__img" src={card.image} alt={`Название фильма ${card.title}`} />
-                </li>))}
-        </ul>
+        <li className='element' key={movie.id}>
+
+            <div className='element__info'>
+
+                <div className="element__mobile">
+                    <h2 className="element__title">{movie.nameRU}</h2>
+                    <span className="element__duration">{durationFilm(movie.duration)}</span>
+                </div>
+
+                {isSavedMovies ? (
+                    <button onClick={handleDeleteClick} aria-label="Удалить фильм" className="element__trash" type="button"></button>
+                ) : (
+                    <button onClick={handleMoviesClick} aria-label="Отметка мне нравится" className={movieLikeButtonClassName} type="button"></button>)}
+            </div>
+
+            <a target='_blank' href={movie.trailerLink} rel='noreferrer'>
+                <img className="element__img" alt={`Название фильма ${movie.nameRU}`}
+                    src={isSavedMovies ? movie.image : `https://api.nomoreparties.co/${movie.image.url}`} />
+            </a>
+        </li>
     )
 }
 
-
 export default MoviesCard;
+

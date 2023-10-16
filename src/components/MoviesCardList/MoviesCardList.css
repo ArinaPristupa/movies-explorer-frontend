@@ -1,8 +1,18 @@
+.list {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .list-movies {
   display: flex;
   justify-content: center;
   margin-bottom: 80px;
   margin-top: 60px;
+}
+
+.list-movies__button-container {
+  text-align: center;
 }
 
 .list-movies__button {
@@ -25,18 +35,27 @@
   cursor: pointer;
 }
 
+.list__error {
+  color: #8b8b8b;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) {
   .list-movies {
     margin-top: 80px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 475px) {
   .list-movies {
     margin-top: 66px;
   }
 
   .list-movies__button {
     width: 240px;
+    margin-top: 50px;
   }
 }

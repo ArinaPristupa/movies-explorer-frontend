@@ -58,11 +58,11 @@
 }
 
 .element__img-like_active {
-  background-image: url("../../images/noactive.svg");
+  background-image: url("../../images/likeactive.svg");
 }
 
 .element__img-like_noactive {
-  background-image: url("../../images/likeactive.svg");
+  background-image: url("../../images/noactive.svg");
 }
 
 .element__trash {
@@ -89,16 +89,26 @@
   margin-right: 6px;
 }
 
+@media screen and (max-width: 1050px) {
+  .element__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 330px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .elements {
     margin: 0 30px;
   }
 }
 
-@media screen and (max-width: 616px) {
+@media screen and (max-width: 690px) {
   .element__title {
     font-size: 14px;
     line-height: 16px;
+    max-width: 220px;
   }
 
   .element__img {
