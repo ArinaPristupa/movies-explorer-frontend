@@ -15,7 +15,7 @@ function Register({ handleRegister, isLoading }) {
 
   return (
     <ElementForm
-      title='Добро пожаловать!' buttonText='Зарегистрироваться' sign='Уже зарегистрированы?' linkRouter='/signin' link='Войти' onSubmit={handleSubmit} isLoading={isLoading} isDisabled={!isFormValidation}>
+      title='Добро пожаловать!' buttonText='Зарегистрироваться' sign='Уже зарегистрированы?' linkRouter='/signin' link='Войти' onSubmit={handleSubmit} isLoading={isLoading} isDisabled={!isFormValidation || isLoading}>
       <label className='form__label'>Имя
         <input
           type="text"

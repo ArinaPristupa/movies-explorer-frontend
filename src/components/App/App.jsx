@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate, Navigate } from 'react-router-dom';
 
 import './App.css';
 
@@ -30,6 +30,7 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
+  const [isDataLoaded, setIsDataLoaded] = React.useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -82,6 +83,7 @@ function App() {
   }
 
   function register({ name, email, password }) {
+    setIsLoading(true);
     api
       .registerUser(name, email, password)
       .then(() => {
@@ -93,10 +95,14 @@ function App() {
         setisInfoToolTipPopupOpen(true);
         setisInfoToolTipData(false);
         console.log(err);
-      });
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
   }
 
   function login({ email, password }) {
+    setIsLoading(true);
     api
       .loginUse(email, password)
       .then((res) => {
@@ -104,7 +110,7 @@ function App() {
           setisInfoToolTipPopupOpen(true);
           setisInfoToolTipData(true);
           localStorage.setItem("jwt", res.token);
-          navigate("./movies");
+          navigate('/movies');
           setIsLoggedIn(true);
         }
       })
@@ -129,26 +135,27 @@ function App() {
   }
 
   React.useEffect(() => {
-    if (isLoggedIn) {
-      api
-        .getInformationUser()
+    if (!isDataLoaded && isLoggedIn) {
+      api.getInformationUser()
         .then((profileData) => {
           setCurrentUser(profileData);
         })
         .catch((err) => {
-          console.log(err); // выведем ошибку в консоль
+          console.log(err);
         });
 
-      api
-        .getInitialMovies()
+      api.getInitialMovies()
         .then((moviesData) => {
-          setMovies(moviesData.reverse())
+          setMovies(moviesData.reverse());
         })
         .catch((err) => {
-          console.log(err); // выведем ошибку в консоль
+          console.log(err);
         });
+
+      setIsDataLoaded(true);
     }
-  }, [isLoggedIn, navigate])
+  }, [isLoggedIn, isDataLoaded, navigate]);
+
 
   //обновление профиля
   function handleUpdateUser(data) {
@@ -202,18 +209,14 @@ function App() {
             <Route
               path='/signin'
               element={
-                <>
-                  <Login isLoading={isLoading} handleLogin={login} />
-                </>
+                isLoggedIn ? <Navigate to="/movies" /> : <Login isLoading={isLoading} handleLogin={login} />
               }
             />
 
             <Route
               path='/signup'
               element={
-                <>
-                  <Register isLoading={isLoading} handleRegister={register} />
-                </>
+                isLoggedIn ? <Navigate to="/movies" /> : <Register isLoading={isLoading} handleRegister={register} />
               }
             />
 

@@ -60,7 +60,7 @@ function SearchForm({ filterMovies, searchMovies, shortMovies }) {
                     />
                     <button type="submit" className="search__button" ><img className='search__img-button' src={button} alt="кнопка поиска" /></button>
                 </form>
-                <FilterCheckbox filterMovies={filterMovies} shortMovies={shortMovies} />
+                <FilterCheckbox filterMovies={filterMovies} isChecked={shortMovies} />
                 {isSearchError && (<span className='search__form-error'>Введите поисковой запрос!</span>)}
             </div>
         </section>

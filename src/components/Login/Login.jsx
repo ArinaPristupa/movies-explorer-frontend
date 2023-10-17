@@ -15,7 +15,7 @@ function Login({ handleLogin, isLoading }) {
 
   return (
     <ElementForm
-      title='Рады видеть!' buttonText='Войти' sign='Ещё не зарегистрированы?' linkRouter='/signup' link='Регистрация' onSubmit={handleSubmit} isLoading={isLoading} isDisabled={!isFormValidation}>
+      title='Рады видеть!' buttonText='Войти' sign='Ещё не зарегистрированы?' linkRouter='/signup' link='Регистрация' onSubmit={handleSubmit} isLoading={isLoading} isDisabled={!isFormValidation || isLoading}>
       <label className='form__label'>E-mail
         <input
           type="email"

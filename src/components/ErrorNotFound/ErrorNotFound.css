@@ -32,6 +32,8 @@
   line-height: 17px;
   text-decoration: none;
   margin: 0 auto 60px;
+  background-color: #202020;
+  border: none;
 }
 
 .error__link:hover {

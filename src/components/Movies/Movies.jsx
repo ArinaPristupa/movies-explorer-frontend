@@ -37,18 +37,15 @@ function Movies({ isloggedIn, onMoviesDelete, onMoviesLike, savedMovies }) {
     }
   }, []);
 
-
   //короткометражки из хранилища
   React.useEffect(() => {
-
     if (localStorage.getItem('shortFilms') === 'true') {
-
-      setIsShortMovies(true)
+      setIsShortMovies(true);
     } else {
-      setIsShortMovies(false)
+      setIsShortMovies(false);
     }
-
   }, []);
+
 
   //были ли найдены фильмы по запросу
   React.useEffect(() => {
@@ -111,9 +108,9 @@ function Movies({ isloggedIn, onMoviesDelete, onMoviesLike, savedMovies }) {
 
     const updateFilterFilm = filterMovies(movies, search, short)
 
-    setIsfilterMovies(short ? filterShort(updateFilterFilm) : updateFilterFilm)
-
     setInitialFilms(updateFilterFilm)
+
+    setIsfilterMovies(short ? filterShort(updateFilterFilm) : updateFilterFilm)
 
     localStorage.setItem('films', JSON.stringify(updateFilterFilm))
     localStorage.setItem('allFilms', JSON.stringify(movies))
@@ -135,7 +132,6 @@ function Movies({ isloggedIn, onMoviesDelete, onMoviesLike, savedMovies }) {
     } else {
       setIsfilterMovies(initialFilms);
     }
-
     localStorage.setItem('shortFilms', !isShortMovies);
   }
 
