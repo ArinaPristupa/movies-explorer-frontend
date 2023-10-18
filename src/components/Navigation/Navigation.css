@@ -1,0 +1,132 @@
+.navigation {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .navigation__container {
+    flex: 1 1 auto;
+  }
+
+  .navigation__content {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 159px 90px 90px;
+    width: 520px;
+    min-height: 100vh;
+    background: #202020;
+    position: relative;
+  }
+
+  .navigation__btm-close {
+    position: absolute;
+    top: 26px;
+    right: 28px;
+    background-image: url("../../images/closebtn.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: #202020;
+    width: 22px;
+    height: 22px;
+  }
+
+  .navigation__btm-close:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .navigation__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .navigation__item {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .navigation__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 4px;
+  }
+
+  .navigation__link:hover {
+    border-bottom: 2px solid #fff;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .navigation__button {
+    margin-top: 594px;
+  }
+
+  .navigation__button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .navigation__title {
+    border-radius: 20px;
+    background: #313131;
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    height: 25px;
+    padding: 10px 20px 0 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .navigation__container {
+    display: none;
+  }
+
+  .navigation__content {
+    width: 100%;
+    padding: 144px 10px 46px;
+  }
+
+  .navigation__list {
+    gap: 22px;
+  }
+
+  .navigation__btm-close {
+    top: 19px;
+    right: 20px;
+  }
+
+  .navigation__link {
+    padding-bottom: 7px;
+  }
+
+  .navigation__button {
+    margin-top: 420px;
+  }
+}

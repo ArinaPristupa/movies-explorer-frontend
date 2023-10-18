@@ -1,0 +1,197 @@
+.profile__title {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 29px;
+  margin: 73px 70px 106px;
+}
+
+.profile__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+.profile__label {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  position: relative;
+}
+
+.profile__line {
+  border: 0.5px solid #424242;
+  width: 410px;
+}
+
+.profile__text {
+  text-align: right;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+  background: #202020;
+  border: none;
+  color: #fff;
+  width: 200px;
+}
+
+.profile__text::placeholder {
+  color: #fff;
+}
+
+.profile__button {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  min-width: 100%;
+  height: 45px;
+  border-radius: 3px;
+  background: #4285f4;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: 1s;
+  cursor: pointer;
+  margin-top: 200px;
+  margin-bottom: 60px;
+}
+
+.profile__button-save_active {
+  box-sizing: border-box;
+  pointer-events: none;
+  background: #fff;
+  border: 1px solid #000000;
+  color: #000000;
+  opacity: 0.2;
+}
+
+.profile__button:hover {
+  opacity: 0.7;
+}
+
+.profile__button-save {
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  width: 410px;
+  background: #202020;
+  border: none;
+  margin-top: 204px;
+  color: #fff;
+}
+
+.profile__button-save:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.profile__button-exit {
+  color: #ee3465;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  width: 410px;
+  background: #202020;
+  border: none;
+  margin-top: 14px;
+  margin-bottom: 70px;
+  text-decoration: none;
+}
+
+.profile__button-exit:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.profile__form-error {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  color: rgb(185, 70, 70);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__title {
+    margin-top: 235px;
+    margin-bottom: 80px;
+  }
+  .profile__label {
+    padding-top: 15px;
+  }
+
+  .profile__button {
+    margin-bottom: 261px;
+  }
+
+  .profile__button-save {
+    margin-top: 195px;
+  }
+
+  .profile__button-exit {
+    margin-bottom: 269px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile__title {
+    margin-top: 70px;
+    margin-bottom: 65px;
+  }
+
+  .profile__line {
+    width: 260px;
+    align-self: center;
+  }
+
+  .profile__text {
+    padding: 0;
+  }
+
+  .profile__label {
+    width: 260px;
+    padding-top: 17px;
+    align-self: center;
+  }
+
+  .profile__button {
+    min-width: 260px;
+    margin: 340px auto 50px;
+  }
+
+  .profile__button-save {
+    width: 300px;
+    align-self: center;
+    margin-top: 361px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile__button-exit {
+    width: 300px;
+    align-self: center;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 43px;
+  }
+}

@@ -1,0 +1,165 @@
+.elements {
+  margin: 0 70px;
+  padding: 0;
+}
+
+.element {
+  background: #2f2f2f;
+  list-style: none;
+  height: 134px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.element__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 22px;
+}
+
+.element__title {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 22px 0 9px 0;
+}
+
+.element__duration {
+  color: #8b8b8b;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+  margin: 0;
+}
+
+.element__img-mobile {
+  display: none;
+}
+
+.element__img-like {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 12px;
+  border: none;
+  margin-top: 28px;
+  background-color: #2f2f2f;
+}
+
+.element__img-like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.element__img-like_active {
+  background-image: url("../../images/likeactive.svg");
+}
+
+.element__img-like_noactive {
+  background-image: url("../../images/noactive.svg");
+}
+
+.element__trash {
+  background-image: url("../../images/deletefilm.svg");
+  width: 14px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  margin-top: 30px;
+  background-color: #2f2f2f;
+}
+
+.element__trash:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.element__img {
+  width: 220px;
+  height: 122px;
+  object-fit: cover;
+  margin-top: 6px;
+  margin-right: 6px;
+}
+
+@media screen and (max-width: 1050px) {
+  .element__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 330px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .elements {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .element__title {
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 220px;
+  }
+
+  .element__img {
+    width: 150px;
+    height: 122px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .elements {
+    margin: 0 10px;
+  }
+
+  .element__title {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+    margin-top: 14px;
+    margin-bottom: 2px;
+  }
+
+  .element__img {
+    width: 300px;
+    height: 168px;
+    margin: 0;
+  }
+
+  .element {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 300px;
+    height: 232px;
+    margin-bottom: 20px;
+  }
+
+  .element__info {
+    flex-direction: row;
+    margin-left: 12px;
+    justify-content: space-between;
+    order: 2;
+  }
+
+  .element__img-like {
+    margin: 0;
+    margin-right: 16px;
+    margin-top: 14px;
+  }
+
+  .element__trash {
+    margin: 0;
+    margin-right: 16px;
+    margin-top: 14px;
+  }
+}
